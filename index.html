@@ -499,35 +499,21 @@ function submitSurvey(){
   nextPage(5);
 }
 function submitSurvey() {
-
   fetch("https://script.google.com/macros/s/AKfycbwxuAg0ieF1jXS1iCCFMnurs0Rtk4P0BrJxWQjXU-FaZTpu2wsbq7DZufvqWDMc_-Bf/exec", {
-
     method: "POST",
-
     headers: {
       "Content-Type": "application/json"
     },
-
     body: JSON.stringify(responses)
-
   })
-
   .then(response => response.json())
-
   .then(data => {
-
     nextPage(5);
-
   })
-
   .catch(error => {
-
     alert("Submission failed");
-
     console.log(error);
-
   });
-
 }
 </script>
 </body>

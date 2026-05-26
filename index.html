@@ -498,6 +498,37 @@ function submitSurvey(){
   console.log('RESPONSE_CSV:',row);
   nextPage(5);
 }
+function submitSurvey() {
+
+  fetch("https://script.google.com/macros/s/AKfycbwZQOP3xJOh7IfOc0r4LG4VE0lrCW9JpBb8dJ5GPTWclSCWxob7F1YV8YUCtJD7Taoj/exec", {
+
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify(responses)
+
+  })
+
+  .then(response => response.json())
+
+  .then(data => {
+
+    nextPage(5);
+
+  })
+
+  .catch(error => {
+
+    alert("Submission failed");
+
+    console.log(error);
+
+  });
+
+}
 </script>
 </body>
 </html>
